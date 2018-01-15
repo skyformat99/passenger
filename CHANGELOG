@@ -1,5 +1,6 @@
 Release 5.2.1 (Not yet released)
 -------------
+ * Fixed a compilation regression (from 5.1.9) on some platforms by explicitly using the stl queue. Closes GH-2016.
 
  * Fixes a regression from 5.1.11 that prevented Passenger from compiling on FreeBSD in some cases. Closes GH-2031.
  * Fixes a bounds issue in printing an error message that could occur in some cases when spawning a child process fails. Issue was present from 5.1.11.
