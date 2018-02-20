@@ -89,7 +89,7 @@ class Installer < PhusionPassenger::AbstractInstaller
       ids << 'rack'
     end
     # On macOS our Crypto.cpp uses TransportSecurity instead of OpenSSL.
-    if PlatformInfo.os_name_simple != 'macosx'
+    if !(PlatformInfo.os_name_simple == 'macosx' && PlatformInfo.os_version >= '10.13')
       ids << 'openssl-dev'
     end
     if PlatformInfo.apxs2_needed_for_building_apache_modules?

@@ -2,6 +2,7 @@ Release 5.2.1 (Not yet released)
 -------------
 
  * Don't try to use OOM scoring on macOS, since it doesn't have the Linux OOM killer.
+ * No longer uses Security Framework on macOS 10.13+. This will prevent further keychain warngins from appropriately compiled Passengers.
  * Warns if using an incompatible compiler on macOS < 10.13. Closes GH-2017.
  * Fixes a regression from 5.1.11 that prevented Passenger from compiling on FreeBSD in some cases. Closes GH-2031.
  * Fixes a bounds issue in printing an error message that could occur in some cases when spawning a child process fails. Issue was present from 5.1.11.
