@@ -140,7 +140,7 @@ module PhusionPassenger
         p @dirs
         p Dir.logical_pwd
         p File.absolute_logical_path(".")
-        p File.absolute_logical_path(@dirs[0])
+        p File.absolute_logical_path(@dirs[0]) unless @dirs.empty?
         if @dirs.empty?
           return File.absolute_logical_path(".")
         else
