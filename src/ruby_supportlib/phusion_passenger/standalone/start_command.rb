@@ -281,6 +281,8 @@ module PhusionPassenger
 
       def find_apps
         PhusionPassenger.require_passenger_lib 'standalone/app_finder'
+        puts 'find_apps'
+        p @argv
         @app_finder = AppFinder.new(@argv, @options, @local_options)
         @apps = @app_finder.scan
         if @app_finder.multi_mode? && @options[:engine] != 'nginx'

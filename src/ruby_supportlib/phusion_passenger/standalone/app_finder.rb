@@ -49,6 +49,8 @@ module PhusionPassenger
       end
 
       def initialize(dirs, options = {}, local_options = {})
+        puts 'initialize'
+        p dirs
         @dirs = dirs
         @options = options.dup
         determine_mode_and_execution_root(options, local_options)
@@ -134,6 +136,11 @@ module PhusionPassenger
       end
 
       def find_app_root
+        puts 'find_app_root'
+        p @dirs
+        p Dir.logical_pwd
+        p File.absolute_logical_path(".")
+        p File.absolute_logical_path(@dirs[0])
         if @dirs.empty?
           return File.absolute_logical_path(".")
         else
@@ -172,6 +179,11 @@ module PhusionPassenger
       end
 
       def determine_mode_and_execution_root(options, local_options)
+        puts 'determine_mode_and_execution_root'
+        p @dirs
+        p Dir.logical_pwd
+        p File.absolute_logical_path(".")
+        p File.absolute_logical_path(@dirs[0])
         @mode = :single
         if @dirs.empty?
           @execution_root = Dir.logical_pwd
